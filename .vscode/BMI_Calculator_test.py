@@ -1,0 +1,1 @@
+# Test file containign tests for the functiosn within BMI_Calculator.py
