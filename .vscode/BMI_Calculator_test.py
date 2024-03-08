@@ -96,5 +96,66 @@ class Test_TestCheckHeightIn(unittest.TestCase):
         self.assertEqual(BMI_Calculator.CheckHeightIn ("-twelve"), 0)
 
 
+class Test_TestCheckWeight(unittest.TestCase):
+
+    # Perform six tests of positive integers of varying size; all should be accepted (return 1)
+    def test_posInt1(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("3"), 1)
+
+    def test_posInt2(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("5"), 1)
+
+    def test_posInt3(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("35"), 1)
+
+    def test_posInt4(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("155"), 1)
+
+    def test_posInt5(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("287"), 1)
+
+    def test_posInt6(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("9001"), 1)
+
+
+    # Perform four tests of negative integers of different size; both should be rejected (return 0)
+    def test_negInt1(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("-5"), 0)
+
+    def test_negInt2(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("-12"), 0)
+
+    def test_negInt3(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("-600"), 0)
+
+    def test_negInt4(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("-9001"), 0)
+
+
+    # Perform one test on integer zero; should be accepted (return 1)
+    def test_zeroInt(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("0"), 1)
+
+
+    # Perform six tests on non-integer values; all should be rejected (return 0)
+    def test_nonInt1(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("five"), 0)
+
+    def test_nonInt2(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("3and5"), 0)
+
+    def test_nonInt3(self):
+        self.assertEqual(BMI_Calculator.CheckWeight(";.#&"), 0)
+
+    def test_nonInt4(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("5."), 0)
+
+    def test_nonInt5(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("-eight"), 0)
+
+    def test_nonInt6(self):
+        self.assertEqual(BMI_Calculator.CheckWeight("over9000"), 0)
+
+
 if __name__ == '__main__':
     unittest.main()

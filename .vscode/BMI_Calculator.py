@@ -14,8 +14,10 @@ def CheckHeightIn(input):
             return 1
     return 0
 
-def CheckWeight(input): # FUNCTION IS STUB
-    print("placeholder\n")
+def CheckWeight(input):
+    if input.isdigit():
+        return 1
+    return 0
 
 def CalculateBMI(heightFt, heightIn, weight): # FUNCTION IS STUB
     print("placeholder\n")
@@ -60,6 +62,16 @@ while (i2 == 1):
     else:
         print("Error: Input must be a non-negative integer that is no greater than 11 (zero is allowed).")
 
+while (i3 == 1):
+    usrInput3 = input("Enter your weight (in pounds): ")
+    if (CheckWeight(usrInput3) == 1):
+        usrWeight = int(usrInput3)
+        i3 = 0
+    # If input invalid, display error and retry
+    else:
+        print("Error: Input must be a non-negative integer (zero is allowed).")
+
 # TEST OUTPUT
 print("Phase 1 test: the entered value was: %d" % usrHeightFt)
 print("Phase 2 test: the entered value was: %d" % usrHeightIn)
+print("Phase 3 test: the entered value was: %d" % usrWeight)
