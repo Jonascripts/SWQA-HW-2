@@ -3,11 +3,16 @@
 
 def CheckHeightFt(input):
     if input.isdigit():
-            return 1
+        return 1
     return 0
 
-def CheckHeightIn(input): # FUNCTION IS STUB
-    print("placeholder\n")
+def CheckHeightIn(input):
+    if input.isdigit():
+        if (int(input) > 12):
+            return 0
+        else:
+            return 1
+    return 0
 
 def CheckWeight(input): # FUNCTION IS STUB
     print("placeholder\n")
@@ -46,5 +51,15 @@ while (i1 == 1):
     else:
         print("Error: Input must be a non-negative integer (zero is allowed).\n")
 
+while (i2 == 1):
+    usrInput2 = input("Enter your height (in inches): ")
+    if (CheckHeightIn(usrInput2) == 1):
+        usrHeightIn = int(usrInput2)
+        i2 = 0
+    # If input invalid, display error and retry
+    else:
+        print("Error: Input must be a non-negative integer that is no greater than 12 (zero is allowed).\n")
+
 # TEST OUTPUT
 print("Phase 1 test: the entered value was: %d" % usrHeightFt)
+print("Phase 2 test: the entered value was: %d" % usrHeightIn)
