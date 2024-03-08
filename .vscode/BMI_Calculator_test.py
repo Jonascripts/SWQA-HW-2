@@ -176,5 +176,38 @@ class Test_TestCalculateBMI(unittest.TestCase):
         self.assertEqual(BMI_Calculator.CalculateBMI(100, 4, 10000), 5.0)
 
 
+class Test_TestGiveBMIRange(unittest.TestCase):
+
+    # Perform Boundary Testing for all four boundaries -> this will require nine tests
+    # Weak N x 1 testing will be used
+
+    def test_underweight(self):
+        self.assertEqual(BMI_Calculator.giveBMIRange(18.4), 1)
+
+    def test_normal1(self):
+        self.assertEqual(BMI_Calculator.giveBMIRange(18.5), 2)
+
+    def test_normal2(self):
+        self.assertEqual(BMI_Calculator.giveBMIRange(18.6), 2)
+
+    def test_normal3(self):
+        self.assertEqual(BMI_Calculator.giveBMIRange(24.9), 2)
+
+    def test_overweight1(self):
+        self.assertEqual(BMI_Calculator.giveBMIRange(25.0), 3)
+
+    def test_overweight2(self):
+        self.assertEqual(BMI_Calculator.giveBMIRange(25.1), 3)
+
+    def test_overweight3(self):
+        self.assertEqual(BMI_Calculator.giveBMIRange(29.9), 3)
+
+    def test_obese1(self):
+        self.assertEqual(BMI_Calculator.giveBMIRange(30.0), 4)
+
+    def test_obese2(self):
+        self.assertEqual(BMI_Calculator.giveBMIRange(30.1), 4)
+
+
 if __name__ == '__main__':
     unittest.main()
