@@ -8,26 +8,26 @@ class Test_TestCheckHeightFt(unittest.TestCase):
 
     # Perform three tests of positive integers of varying size; all should be accepted (return 1)
     def test_posInt1(self):
-        self.assertEqual(BMI_Calculator.CheckHeightFt(3), 1)
+        self.assertEqual(BMI_Calculator.CheckHeightFt("3"), 1)
 
     def test_posInt2(self):
-        self.assertEqual(BMI_Calculator.CheckHeightFt(5), 1)
+        self.assertEqual(BMI_Calculator.CheckHeightFt("5"), 1)
 
     def test_posInt3(self):
-        self.assertEqual(BMI_Calculator.CheckHeightFt(35), 1)
+        self.assertEqual(BMI_Calculator.CheckHeightFt("35"), 1)
 
 
     # Perform two tests of negative integers of different size; both should be rejected (return 0)
     def test_negInt1(self):
-        self.assertEqual(BMI_Calculator.CheckHeightFt(-5), 0)
+        self.assertEqual(BMI_Calculator.CheckHeightFt("-5"), 0)
 
     def test_negInt2(self):
-        self.assertEqual(BMI_Calculator.CheckHeightFt(-12), 0)
+        self.assertEqual(BMI_Calculator.CheckHeightFt("-12"), 0)
 
 
     # Perform one test on integer zero; should be accepted (return 1)
     def test_zeroInt(self):
-        self.assertEqual(BMI_Calculator.CheckHeightFt(0), 1)
+        self.assertEqual(BMI_Calculator.CheckHeightFt("0"), 1)
 
 
     # Perform five tests on non-integer values; all should be rejected (return 0)
