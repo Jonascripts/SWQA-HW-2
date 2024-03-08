@@ -57,8 +57,6 @@ usrHeightIn = 0
 usrWeight = 0
 # usrBMI calculated from user inputs
 usrBMI = 0
-# BMI range of usrBMI
-usrBMIRange = 0
 
 
 # Begin prompts
@@ -105,7 +103,3 @@ elif giveBMIRange(usrBMI) == 3:
 elif giveBMIRange(usrBMI) == 4:
     print("Your BMI is considered obese.")
 
-# TEST OUTPUT
-print("Phase 1 test: the entered value was: %d" % usrHeightFt)
-print("Phase 2 test: the entered value was: %d" % usrHeightIn)
-print("Phase 3 test: the entered value was: %d" % usrWeight)
