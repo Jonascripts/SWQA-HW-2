@@ -31,7 +31,14 @@ def CalculateBMI(heightFt, heightIn, weight): # FUNCTION IS STUB
     return round((tempWeight / tempHeight), 1)
 
 def giveBMIRange(BMI): # FUNCTION IS STUB
-    print("STUB")
+    if BMI < 18.5:
+        return 1
+    elif (BMI >= 18.5) and (BMI < 25):
+        return 2
+    elif (BMI >= 25) and (BMI < 30):
+        return 3
+    elif BMI >= 30:
+        return 4
 
 
 # Start program
@@ -85,7 +92,18 @@ while (i3 == 1):
         print("Error: Input must be a non-negative integer (zero is allowed).")
 
 print("Calculating your BMI...")
-print("Your BMI is: %f" % CalculateBMI(usrHeightFt, usrHeightIn, usrWeight))
+usrBMI = CalculateBMI(usrHeightFt, usrHeightIn, usrWeight)
+print("Your BMI is: %f" % usrBMI)
+
+print("Determining BMI Range...")
+if giveBMIRange(usrBMI) == 1:
+    print("Your BMI is considered underweight.")
+elif giveBMIRange(usrBMI) == 2:
+    print("Your BMI is considered normal.")
+elif giveBMIRange(usrBMI) == 3:
+    print("Your BMI is considered overweight.")
+elif giveBMIRange(usrBMI) == 4:
+    print("Your BMI is considered obese.")
 
 # TEST OUTPUT
 print("Phase 1 test: the entered value was: %d" % usrHeightFt)
