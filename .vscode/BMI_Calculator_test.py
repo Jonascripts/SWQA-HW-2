@@ -49,14 +49,17 @@ class Test_TestCheckHeightFt(unittest.TestCase):
 
 class Test_TestCheckHeightIn(unittest.TestCase):
 
-    # Perform three tests of positive integers of varying size; all no greater than 12 should be accepted (return 1)
+    # Perform four tests of positive integers of varying size; all no greater than 11 should be accepted (return 1)
     def test_posInt1(self):
         self.assertEqual(BMI_Calculator.CheckHeightIn("5"), 1)
 
     def test_posInt2(self):
-        self.assertEqual(BMI_Calculator.CheckHeightIn("12"), 1)
+        self.assertEqual(BMI_Calculator.CheckHeightIn("11"), 1)
 
     def test_posInt3(self):
+        self.assertEqual(BMI_Calculator.CheckHeightIn("12"), 0)
+
+    def test_posInt4(self):
         self.assertEqual(BMI_Calculator.CheckHeightIn("35"), 0)
 
 

@@ -8,7 +8,7 @@ def CheckHeightFt(input):
 
 def CheckHeightIn(input):
     if input.isdigit():
-        if (int(input) > 12):
+        if (int(input) > 11):
             return 0
         else:
             return 1
@@ -49,7 +49,7 @@ while (i1 == 1):
         i1 = 0
     # If input invalid, display error and retry
     else:
-        print("Error: Input must be a non-negative integer (zero is allowed).\n")
+        print("Error: Input must be a non-negative integer (zero is allowed).")
 
 while (i2 == 1):
     usrInput2 = input("Enter your height (in inches): ")
@@ -58,7 +58,7 @@ while (i2 == 1):
         i2 = 0
     # If input invalid, display error and retry
     else:
-        print("Error: Input must be a non-negative integer that is no greater than 12 (zero is allowed).\n")
+        print("Error: Input must be a non-negative integer that is no greater than 11 (zero is allowed).")
 
 # TEST OUTPUT
 print("Phase 1 test: the entered value was: %d" % usrHeightFt)
