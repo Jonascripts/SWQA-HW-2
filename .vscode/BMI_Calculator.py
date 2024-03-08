@@ -28,7 +28,7 @@ def CalculateBMI(heightFt, heightIn, weight): # FUNCTION IS STUB
     # Square height value
     tempHeight = tempHeight * tempHeight
     # Calculate BMI
-    return (tempWeight / tempHeight)
+    return round((tempWeight / tempHeight), 1)
 
 def giveBMIRange(BMI): # FUNCTION IS STUB
     print("STUB")
