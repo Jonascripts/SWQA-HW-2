@@ -20,7 +20,18 @@ def CheckWeight(input):
     return 0
 
 def CalculateBMI(heightFt, heightIn, weight): # FUNCTION IS STUB
-    print("placeholder\n")
+    # Convert all height to inches
+    tempHeight = heightIn + (heightFt * 12)
+    # Metric conversion
+    tempWeight = weight * 0.45
+    tempHeight = tempHeight * 0.025
+    # Square height value
+    tempHeight = tempHeight * tempHeight
+    # Calculate BMI
+    return round((tempWeight / tempHeight), 1)
+
+def giveBMIRange(BMI): # FUNCTION IS STUB
+    print("STUB")
 
 
 # Start program
@@ -39,6 +50,8 @@ usrHeightIn = 0
 usrWeight = 0
 # usrBMI calculated from user inputs
 usrBMI = 0
+# BMI range of usrBMI
+usrBMIRange = 0
 
 
 # Begin prompts
@@ -70,6 +83,9 @@ while (i3 == 1):
     # If input invalid, display error and retry
     else:
         print("Error: Input must be a non-negative integer (zero is allowed).")
+
+print("Calculating your BMI...")
+print("Your BMI is: %f" % CalculateBMI(usrHeightFt, usrHeightIn, usrWeight))
 
 # TEST OUTPUT
 print("Phase 1 test: the entered value was: %d" % usrHeightFt)

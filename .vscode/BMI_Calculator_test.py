@@ -157,5 +157,24 @@ class Test_TestCheckWeight(unittest.TestCase):
         self.assertEqual(BMI_Calculator.CheckWeight("over9000"), 0)
 
 
+class Test_TestCalculateBMI(unittest.TestCase):
+
+    # Perform five tests with different input values (all inputs can be assumed valid); all should be accepted (return 1)
+    def test_calcBMI1(self):
+        self.assertEqual(BMI_Calculator.CalculateBMI(5, 0, 150), 30.0)
+
+    def test_calcBMI2(self):
+        self.assertEqual(BMI_Calculator.CalculateBMI(4, 10, 125), 26.8)
+
+    def test_calcBMI3(self):
+        self.assertEqual(BMI_Calculator.CalculateBMI(0, 1, 1), 720)
+
+    def test_calcBMI4(self):
+        self.assertEqual(BMI_Calculator.CalculateBMI(6, 1, 1400), 189.2)
+
+    def test_calcBMI5(self):
+        self.assertEqual(BMI_Calculator.CalculateBMI(100, 4, 10000), 5.0)
+
+
 if __name__ == '__main__':
     unittest.main()
